@@ -12,16 +12,9 @@ img {
   padding: 5px;
 }
 
-.card {
-  display: inline-block;
-  margin: 5px;
-  align-content: space-around;
-  border: 1px solid black;
-}
 
-.poster {
-  margin: auto;
-  max-width: 150px;
+.card {
+  border: 1px solid black;
 }
 
 
@@ -31,9 +24,4 @@ img {
 
 #template {
   display: none;
-}
-
-#results {
-  margin: auto;
-  display: inline-block;
 }

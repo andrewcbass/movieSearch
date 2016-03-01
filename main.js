@@ -1,7 +1,10 @@
 'use strict';
-
-$(function() {
-  $('#searchButton').on('click', findMovies);
+var page = 1;
+var totPage = 1;
+$(function()  {
+  $('#searchButton').on('click', searchNow);
+  $('#prevPage').on('click', pageDown);
+  $('#nextPage').on('click', pageUp);
 });
 
 function findMovies() {
@@ -12,14 +15,14 @@ function findMovies() {
 
   $.ajax({
     method:'GET',
-    url:`http://www.omdbapi.com/?s=${movie}&y=${year}&type=${type}&r=json`,
+    url:`http://www.omdbapi.com/?s=${movie}&y=${year}&type=${type}&r=json&page=${page}`,
     success: function(data) {
-      console.log('DATA', data);
       if(data.Response === 'False') {
         $('.oldResults').remove();
         $('#noResults').css('display', 'inline-block');
       }
       else {
+        totPage = Math.ceil(data.totalResults / 10);
         $('#noResults').css('display', 'none');
         var arr = data.Search.map(function(item) {
           return makeMovieCard(item)
@@ -43,8 +46,26 @@ function makeMovieCard(data) {
   return $card;
 }
 
+function searchNow() {
+  page = 1;
+  findMovies();
 
+}
 
+function pageUp() {
+
+  if(page < totPage){
+    page++;
+    findMovies();
+  }
+}
+
+function pageDown() {
+  if(page !== 1) {
+    page = page - 1;
+    findMovies();
+  }
+}
 
 
 
