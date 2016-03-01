@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
+  <script src='main.js'></script>
+  <title>Movies Tonight!!</title>
+</head>
+<body>
+<h1>Search Shows!</h1>
+<h3> Displays the top 10 results, with link to IMDB for more info. </h3>
+  <div id="searchInputs">
+    <input type="text" id="titleSearch" placeholder="Movie title here">
+    <input type="number" id="year" placeholder="Year">
+    <select id="type">
+      <option value="movie">Movie</option>
+      <option value="series">Series</option>
+      <option value="episode">Episode</option>
+    </select>
+    <button id="searchButton">Find Movie!</button>
+  </div>
+
+<div id="results">
+  <div class="card" id="template">
+    <div class="title"><h2>Batman</h2></div>
+    <div class="poster">
+      <a  class='url' href="http://www.imdb.com/title/tt0096895/">
+        <img src="http://ia.media-imdb.com/images/M/MV5BMTYwNjAyODIyMF5BMl5BanBnXkFtZTYwNDMwMDk2._V1_SX300.jpg" class="poster">
+      </a>
+    </div>
+
+  </div>
+<div id="noResults">
+  <h2>Uh oh!  Try changing your inputs to find a movie!</h2>
+</div>
+</div>
+</div>
+</body>
+</html>

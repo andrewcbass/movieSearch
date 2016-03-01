@@ -1,0 +1,39 @@
+body {
+  display: inline-block;
+  background-color: #FF0000;
+}
+#searchInputs {
+  margin-bottom: 5px;
+}
+
+img {
+  width: 100px;
+  heigth: 150px;
+  padding: 5px;
+}
+
+.card {
+  display: inline-block;
+  margin: 5px;
+  align-content: space-around;
+  border: 1px solid black;
+}
+
+.poster {
+  margin: auto;
+  max-width: 150px;
+}
+
+
+#noResults {
+  display: none;
+}
+
+#template {
+  display: none;
+}
+
+#results {
+  margin: auto;
+  display: inline-block;
+}
