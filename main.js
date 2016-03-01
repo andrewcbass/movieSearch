@@ -25,7 +25,7 @@ function findMovies() {
         totPage = Math.ceil(data.totalResults / 10);
         $('#noResults').css('display', 'none');
         var arr = data.Search.map(function(item) {
-          return makeMovieCard(item)
+          return makeMovieCard(item);
         });
         $('.oldResults').remove();
         $('#results').append(arr);
